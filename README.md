@@ -2,12 +2,14 @@
 
 This is our project for the class Introduction to Deep Learning, 11-785, in CMU. The task is to extract textual features from the input query and localize the corresponding object(s) in the image. We approach this problem by using a transformer based architecture called VGTR, which is based on the paper, Visual Grounding with Transformers. This repository is based on top of the VGTR repository and more information about that is provided below.
 
-The repository is divided into 3 branches --
-- BERT - Contains the code for training the model with BERT as textual backbone.
-- Contrastive loss - Contains the code for Contrastive Learning and Alternating Co-Attention.
-- Early Attention - Contains the code for Early Dot Attention and Early Co-Attention. 
+We propose new 2 different attention mechanisms namely, Early Attention and Alternating Co-Attention to enhance the cross-modal fusion between visual and textual features. In addition, we use Contrastive Learning to help the model learn better connections between positive image-query pairs. We also replace the previous textual backbone -- Bi-LSTM -- with BERT.
 
-The model is trained on the RefCOCO dataset and tested on RefCOCO and RefCOCO+ testA and testB sets. The final accuracy of different proposed methods is shown in the table below and we illustrate the robustness of the model in the output images shown below. 
+The repository is divided into 3 branches --
+
+BERT - Contains the code for training the model with BERT as textual backbone.
+Contrastive loss - Contains the code for Contrastive Learning and Alternating Co-Attention.
+Early Attention - Contains the code for Early Dot Attention and Early Co-Attention.
+The model is trained on the RefCOCO dataset and tested on RefCOCO and RefCOCO+ testA and testB sets. The final accuracy of different proposed methods is shown in the table below. Our proposed method combining Contrastive Learning and Alternating Co-Attention performs really well and also out-performs the baseline framework in RefCOCO and RefCOCO+ testA sets.
 
 ![Alt text](result.PNG?raw=true "Title")
 
